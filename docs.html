@@ -15,9 +15,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=JetBrains+Mono:wght@500;600;800&display=swap" rel="stylesheet">
 <style>
 :root{
---bg:#F4EDE3;--surface:#FFFFFF;--surface2:#EFE6D9;--ink:#1C1714;--mut:#6B5F57;--stroke:#1C1714;--line:rgba(28,23,20,.14);
---red:#D92D2A;--red-dk:#A31F1D;--accent:#F5B700;--good:#0E7E58;--blue:#2D63D8;
---f:'Archivo',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;
+  --bg:#F4EDE3;--surface:#FFFFFF;--surface2:#EFE6D9;--ink:#1C1714;--mut:#6B5F57;--stroke:#1C1714;--line:rgba(28,23,20,.14);
+  --red:#D92D2A;--red-dk:#A31F1D;--accent:#F5B700;--good:#0E7E58;--blue:#2D63D8;
+  --f:'Archivo',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;
 }
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:96px}
 body{margin:0;background:var(--bg);color:var(--ink);font:500 17px/1.65 var(--f);-webkit-font-smoothing:antialiased}
@@ -25,6 +25,7 @@ a{color:inherit}button,input,select{font-family:var(--f)}
 :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .wrap{max-width:1220px;margin:0 auto;padding:0 24px}
 .disp{font-family:var(--f);font-stretch:118%;font-weight:900;letter-spacing:-.02em}
+
 /* nav */
 .navwrap{position:sticky;top:0;z-index:40;padding:12px 0;background:linear-gradient(var(--bg) 70%,rgba(244,237,227,0))}
 .nav{display:flex;align-items:center;gap:18px;height:66px;padding:0 10px 0 14px;background:var(--surface);border:2px solid var(--stroke);border-radius:18px;box-shadow:0 4px 0 var(--stroke)}
@@ -39,12 +40,14 @@ a{color:inherit}button,input,select{font-family:var(--f)}
 .btn:hover{background:var(--red-dk)}.btn:active{transform:translateY(3px);box-shadow:0 0 0 var(--stroke)}
 .btn.ghost{background:var(--surface);color:var(--ink)}.btn.ghost:hover{background:var(--surface2)}
 .pill{font:800 13px var(--mono);border:2px solid var(--stroke);border-radius:999px;padding:5px 12px;background:var(--accent)}
+
 /* page head */
 .head{padding:44px 0 34px;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:end}
 .head h1{margin:0 0 14px;font-size:clamp(44px,7vw,92px);line-height:.96;font-stretch:118%}
 .head h1 span{background:linear-gradient(transparent 68%,var(--accent) 68% 92%,transparent 92%)}
 .head p{margin:0;max-width:60ch;font-size:19px;color:var(--mut);font-weight:600}
 .head .acts{display:flex;gap:12px;flex-wrap:wrap}
+
 /* layout */
 .layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:56px;align-items:start;padding-bottom:80px}
 .toc{position:sticky;top:104px;font-weight:700;font-size:15px}
@@ -62,6 +65,7 @@ p{margin:0 0 14px}
 ul,ol{margin:0 0 16px;padding-left:22px}li{margin:5px 0}
 code{font:600 .88em var(--mono);background:var(--surface2);border-radius:6px;padding:2px 6px}
 .lede{font-size:19px;font-weight:600}
+
 /* parts */
 .formula{background:var(--ink);color:#FFF3C4;border-radius:18px;padding:22px 26px;font:700 clamp(15px,2.2vw,20px)/1.7 var(--mono);box-shadow:6px 7px 0 var(--red);margin:18px 0 22px;overflow-wrap:anywhere}
 .formula b{color:var(--accent)}
@@ -93,6 +97,7 @@ td b{font-weight:800}.g{color:var(--good)}.r{color:var(--red)}
 .flow>div:last-child{border:0}
 .flow dt{font:800 13px var(--mono)}.flow dd{margin:0;font-weight:600}
 .flow dt i{font-style:normal;color:var(--red)}
+
 /* calculator */
 .calc{border:2px solid var(--stroke);border-radius:22px;background:var(--surface);box-shadow:6px 7px 0 var(--stroke);overflow:hidden;margin:18px 0 22px}
 .calc .in{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:20px;background:var(--surface2);border-bottom:2px solid var(--stroke)}
@@ -105,6 +110,7 @@ td b{font-weight:800}.g{color:var(--good)}.r{color:var(--red)}
 .calc .row.hi b{color:var(--good)}
 .calc .verdict{padding:16px 20px;background:var(--ink);color:#FFF3C4;font-weight:700}
 .calc .verdict b{color:var(--accent)}
+
 details{border:2px solid var(--stroke);border-radius:16px;background:var(--surface);margin:10px 0;box-shadow:0 3px 0 var(--stroke)}
 summary{cursor:pointer;list-style:none;padding:16px 20px;font:800 17px var(--f);font-stretch:106%;display:flex;justify-content:space-between;gap:16px;align-items:center}
 summary::-webkit-details-marker{display:none}
@@ -114,20 +120,21 @@ details>div{padding:0 20px 8px;color:#3d342e;font-size:16.5px}
 dl.gl{margin:0}dl.gl dt{font:800 15px var(--mono);margin-top:16px}dl.gl dd{margin:2px 0 0;font-weight:600;color:#3d342e}
 footer{border-top:2px solid var(--line);padding:34px 0 60px;color:var(--mut);font-size:14px;font-weight:600}
 footer .wrap{display:grid;gap:10px}
+
 @media (max-width:980px){
-.layout{grid-template-columns:1fr;gap:10px}.toc{display:none}
-.mtoc{display:block;margin:0 0 16px}
-.head{grid-template-columns:1fr}
+  .layout{grid-template-columns:1fr;gap:10px}.toc{display:none}
+  .mtoc{display:block;margin:0 0 16px}
+  .head{grid-template-columns:1fr}
 }
 @media (max-width:640px){
-.wrap{padding:0 16px}
-.nav{gap:8px;height:60px;padding:0 8px 0 10px}.brand .tk,.brand .wm small{display:none}
-.navr .btn{padding:8px 10px;font-size:13px}
-.tiers3{grid-template-columns:1fr}
-.calc .in{grid-template-columns:1fr}
-.flow>div{grid-template-columns:1fr;gap:2px}
-.steps li{grid-template-columns:40px 1fr;gap:12px;padding:14px}.steps li::before{width:40px;height:40px;font-size:19px}
-body{font-size:16.5px}
+  .wrap{padding:0 16px}
+  .nav{gap:8px;height:60px;padding:0 8px 0 10px}.brand .tk,.brand .wm small{display:none}
+  .navr .btn{padding:8px 10px;font-size:13px}
+  .tiers3{grid-template-columns:1fr}
+  .calc .in{grid-template-columns:1fr}
+  .flow>div{grid-template-columns:1fr;gap:2px}
+  .steps li{grid-template-columns:40px 1fr;gap:12px;padding:14px}.steps li::before{width:40px;height:40px;font-size:19px}
+  body{font-size:16.5px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 .xl{display:inline-grid;place-items:center;width:44px;height:44px;flex:none;background:var(--surface);color:var(--ink);border:2px solid var(--stroke);border-radius:12px;box-shadow:0 3px 0 var(--stroke);text-decoration:none}.xl svg{width:18px;height:18px}.xl:hover{background:var(--surface2)}.xl:active{transform:translateY(3px);box-shadow:none}
@@ -136,248 +143,266 @@ body{font-size:16.5px}
 </head>
 <body id="top">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-<symbol id="capsule" viewBox="0 0 40 40"><circle cx="20" cy="20" r="17" fill="#FFF3C4"/><path d="M3 20a17 17 0 0 0 34 0z" fill="#D92D2A"/><path d="M3 20a17 17 0 0 1 34 0" fill="#F5B700" opacity=".35"/><path d="M4 20h32" stroke="#1C1714" stroke-width="1.6" opacity=".55"/><circle cx="20" cy="20" r="17" fill="none" stroke="#1C1714" stroke-width="3"/><ellipse cx="13" cy="11" rx="5" ry="2.6" fill="#fff" opacity=".9" transform="rotate(-30 13 11)"/></symbol>
+  <symbol id="capsule" viewBox="0 0 40 40"><circle cx="20" cy="20" r="17" fill="#FFF3C4"/><path d="M3 20a17 17 0 0 0 34 0z" fill="#D92D2A"/><path d="M3 20a17 17 0 0 1 34 0" fill="#F5B700" opacity=".35"/><path d="M4 20h32" stroke="#1C1714" stroke-width="1.6" opacity=".55"/><circle cx="20" cy="20" r="17" fill="none" stroke="#1C1714" stroke-width="3"/><ellipse cx="13" cy="11" rx="5" ry="2.6" fill="#fff" opacity=".9" transform="rotate(-30 13 11)"/></symbol>
 </defs></svg>
+
 <div class="navwrap"><div class="wrap">
-<header class="nav">
-<a class="brand" href="index.html" aria-label="Gacha Guard home">
-<svg viewBox="0 0 40 44" aria-hidden="true"><path d="M20 2L37 8.5V22c0 10.5-7 18.5-17 21C10 40.5 3 32.5 3 22V8.5z" fill="#D92D2A" stroke="#1C1714" stroke-width="2.6" stroke-linejoin="round"/><path d="M20 6.5L33 11.5V22c0 8-5.2 14.4-13 16.6" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="1.6"/><circle cx="20" cy="22.5" r="10.5" fill="#FFF3C4" stroke="#1C1714" stroke-width="2.2"/><path d="M9.5 22.5a10.5 10.5 0 0 0 21 0z" fill="#F5B700" stroke="#1C1714" stroke-width="2.2" stroke-linejoin="round"/><ellipse cx="15.6" cy="17.6" rx="3" ry="1.6" fill="#fff" transform="rotate(-30 15.6 17.6)"/></svg>
-<span class="wm"><b>Gacha Guard</b><small>docs</small></span><span class="tk">$GUARD</span>
-</a>
-<div class="navr"><a class="xl" href="https://x.com/gachaguardsol" target="_blank" rel="noopener noreferrer" aria-label="Gacha Guard on X"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a class="btn ghost" href="index.html">Back to site</a><a class="btn" href="index.html#packs">Open a pack</a></div>
-</header>
+  <header class="nav">
+    <a class="brand" href="index.html" aria-label="Gacha Guard home">
+      <svg viewBox="0 0 40 44" aria-hidden="true"><path d="M20 2L37 8.5V22c0 10.5-7 18.5-17 21C10 40.5 3 32.5 3 22V8.5z" fill="#D92D2A" stroke="#1C1714" stroke-width="2.6" stroke-linejoin="round"/><path d="M20 6.5L33 11.5V22c0 8-5.2 14.4-13 16.6" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="1.6"/><circle cx="20" cy="22.5" r="10.5" fill="#FFF3C4" stroke="#1C1714" stroke-width="2.2"/><path d="M9.5 22.5a10.5 10.5 0 0 0 21 0z" fill="#F5B700" stroke="#1C1714" stroke-width="2.2" stroke-linejoin="round"/><ellipse cx="15.6" cy="17.6" rx="3" ry="1.6" fill="#fff" transform="rotate(-30 15.6 17.6)"/></svg>
+      <span class="wm"><b>Gacha Guard</b><small>docs</small></span><span class="tk">$GUARD</span>
+    </a>
+    <div class="navr"><a class="xl" href="https://x.com/gachaguardsol" target="_blank" rel="noopener noreferrer" aria-label="Gacha Guard on X"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a class="btn ghost" href="index.html">Back to site</a><a class="btn" href="index.html#packs">Open a pack</a></div>
+  </header>
 </div></div>
+
 <main class="wrap">
-<div class="head">
-<div>
-<h1 class="disp">Gacha Guard <span>docs</span></h1>
-<p>Everything about how protected pulls work: what you pay, what comes back, how your coverage is set, and how it connects to Collector Crypt packs.</p>
-</div>
-</div>
-<div class="layout">
-<nav class="toc" aria-label="On this page" id="toc">
-<h2>On this page</h2>
-<a href="#overview">Overview</a>
-<a href="#quickstart">Quick start</a>
-<a href="#rebate">How a rebate is calculated</a>
-<a href="#packs">Packs and the fee</a>
-<a href="#tiers">Coverage tiers</a>
-<a href="#collector-crypt">Collector Crypt integration</a>
-<a href="#claim">Claiming your rebate</a>
-<a href="#fees">Where the fee goes</a>
-<a href="#calculator">Try the numbers</a>
-<a href="#risks">Risks and limits</a>
-<a href="#faq">FAQ</a>
-<a href="#glossary">Glossary</a>
-</nav>
-<article>
-<details class="mtoc"><summary>On this page</summary><div>
-<p style="margin:0 0 10px"><a href="#overview">Overview</a> · <a href="#quickstart">Quick start</a> · <a href="#rebate">Rebates</a> · <a href="#packs">Packs and fee</a> · <a href="#tiers">Tiers</a> · <a href="#collector-crypt">Collector Crypt</a> · <a href="#claim">Claiming</a> · <a href="#fees">Fee split</a> · <a href="#calculator">Calculator</a> · <a href="#risks">Risks</a> · <a href="#faq">FAQ</a> · <a href="#glossary">Glossary</a></p>
-</div></details>
-<section id="overview">
-<h2 class="sec disp"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg>Overview</h2>
-<p class="lede">Gacha Guard adds a rebate to graded-card pack pulls. If the card you pull is worth less than the pack you paid for, part of the difference comes back to your wallet in USDC. You keep the card either way.</p>
-<p>It works on top of Collector Crypt packs. Collector Crypt runs the packs, the odds, the vaulting and the buyback. Gacha Guard adds one thing: a protection fee when you open, and a rebate when the pull falls short.</p>
-<ul>
-<li><b>You keep the card.</b> A rebate never takes the card or pauses your buyback, sale or shipping options.</li>
-<li><b>The fee is visible.</b> A flat 10% on top of the pack price, shown before you confirm.</li>
-<li><b>How much comes back depends on $GUARD.</b> Holding $GUARD sets your coverage at 25%, 50% or 100% of the shortfall.</li>
-<li><b>Rebates are capped at $250</b> per pack.</li>
-</ul>
-<div class="note"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg><p><b>Protection is not a guarantee of profit.</b> You still pay the fee, and a rebate only covers part of a bad pull unless you are in the top tier. See <a href="#risks">Risks and limits</a>.</p></div>
-</section>
-<section id="quickstart">
-<h2 class="sec disp"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg>Quick start</h2>
-<ol class="steps">
-<li><div><b>Connect your Solana wallet</b><span>The wallet that holds your $GUARD is the wallet that opens the pack. Coverage is read from it.</span></div></li>
-<li><div><b>Pick a protected pack</b><span>Starter $25, Great $50, Ultra $100 or Master $500. The total shown includes the 10% protection fee.</span></div></li>
-<li><div><b>Open it</b><span>One approval pays for the pack and the fee. Your card lands in your wallet like any Collector Crypt pull.</span></div></li>
-<li><div><b>Claim your rebate</b><span>If the card is worth less than the pack, your rebate shows as ready. Claim it and USDC arrives in the same wallet.</span></div></li>
-</ol>
-</section>
-<section id="rebate">
-<h2 class="sec disp"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg>How a rebate is calculated</h2>
-<p>The rebate is a share of the <b>shortfall</b>: how far the card falls below the pack price.</p>
-<div class="formula">shortfall = <b>pack price</b> − <b>card value</b>  (never below 0)<br>rebate&nbsp;&nbsp;&nbsp;= <b>coverage</b> × shortfall<br>paid&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= min(<b>rebate</b>, $250)</div>
-<ul>
-<li><b>Pack price</b> is the price of the pack before the protection fee. The fee is not part of the shortfall.</li>
-<li><b>Card value</b> is the insured value Collector Crypt assigns to the card at the time of the pull. See <a href="#collector-crypt">the integration</a>.</li>
-<li><b>Coverage</b> is 25%, 50% or 100%, set by your <a href="#tiers">$GUARD tier</a>.</li>
-<li>If the card is worth the pack price or more, the shortfall is $0 and there is no rebate. Nothing is taken back.</li>
-<li>Amounts are rounded to the nearest cent.</li>
-</ul>
-<h3>Example: Great pack ($50), you pay $55</h3>
-<div class="tw"><table>
-<thead><tr><th>Card is worth</th><th class="n">Shortfall</th><th class="n">Holder 25%</th><th class="n">Collector 50%</th><th class="n">Whale 100%</th></tr></thead>
-<tbody>
-<tr><td><b>$5.00</b></td><td class="n">$45.00</td><td class="n g">$11.25</td><td class="n g">$22.50</td><td class="n g">$45.00</td></tr>
-<tr><td><b>$20.00</b></td><td class="n">$30.00</td><td class="n g">$7.50</td><td class="n g">$15.00</td><td class="n g">$30.00</td></tr>
-<tr><td><b>$50.00</b></td><td class="n">$0.00</td><td class="n">$0.00</td><td class="n">$0.00</td><td class="n">$0.00</td></tr>
-<tr><td><b>$80.00</b></td><td class="n">$0.00</td><td class="n">$0.00</td><td class="n">$0.00</td><td class="n">$0.00</td></tr>
-</tbody></table></div>
-<p>Take the $20 card at the Collector tier. You paid $55 and hold a $20 card. The rebate is $15. Without protection you would be down $30 on the pull ($50 pack, $20 card). With it you are down $20 ($55 paid, minus the $15 rebate, minus the $20 card). That is $10 better, not $15, because of the $5 fee.</p>
-<h3>The $250 cap</h3>
-<p>A Master pack ($500) with a card worth $40 leaves a $460 shortfall. At 100% coverage that is $460, but the rebate is capped at <b>$250</b>. At 50% it is $230, under the cap, so you receive $230.</p>
-</section>
-<section id="packs">
-<h2 class="sec disp"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg>Packs and the fee</h2>
-<p>Four protected packs. The protection fee is 10% of the pack price and is added on top. Collector Crypt receives the pack price. The fee is Gacha Guard's.</p>
-<div class="tw"><table>
-<thead><tr><th>Pack</th><th class="n">Pack price</th><th class="n">Fee (10%)</th><th class="n">You pay</th><th class="n">Top rebate at 100%</th></tr></thead>
-<tbody>
-<tr><td><b>Starter</b></td><td class="n">$25</td><td class="n">$2.50</td><td class="n"><b>$27.50</b></td><td class="n">$25</td></tr>
-<tr><td><b>Great</b></td><td class="n">$50</td><td class="n">$5.00</td><td class="n"><b>$55.00</b></td><td class="n">$50</td></tr>
-<tr><td><b>Ultra</b></td><td class="n">$100</td><td class="n">$10.00</td><td class="n"><b>$110.00</b></td><td class="n">$100</td></tr>
-<tr><td><b>Master</b></td><td class="n">$500</td><td class="n">$50.00</td><td class="n"><b>$550.00</b></td><td class="n">$250 (cap)</td></tr>
-</tbody></table></div>
-<p>"Top rebate" is the most a pack can pay back, which only happens if the card is worth $0 and you hold the top tier. Each protected pack matches the Collector Crypt pack at the same price. You also need a small amount of SOL for the Solana network fee, the same as any Collector Crypt pull.</p>
-</section>
-<section id="tiers">
-<h2 class="sec disp"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg>Coverage tiers</h2>
-<p>Your coverage is set by how much $GUARD your wallet holds, as a share of the total supply.</p>
-<div class="tiers3">
-<div><small>HOLDER</small><b>25%</b><span>Hold 0.1% of supply or more</span></div>
-<div><small>COLLECTOR</small><b>50%</b><span>Hold 1% of supply or more</span></div>
-<div><small>WHALE</small><b>100%</b><span>Hold 2% of supply or more</span></div>
-</div>
-<h3>The pull window</h3>
-<p>The tier that applies to a pull is based on the <b>lowest</b> $GUARD balance your wallet held during the <b>pull window</b>: from the moment you open the pack until your rebate is paid. Buying $GUARD just before you open, then selling straight after, will not raise your tier. If you hold below 0.1% at any point in the window, the pull has no coverage.</p>
-<p>The live tier and balance are shown on the site under <b>Your coverage</b> once your wallet is connected.</p>
-</section>
-<section id="collector-crypt">
-<h2 class="sec disp"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg>Collector Crypt integration</h2>
-<p>Collector Crypt is a Solana platform for tokenized graded cards. A pack pull gives you an NFT that represents a real graded card held in a vault. Gacha Guard reads that pull and pays the rebate. It does not change the pack, the odds or the card.</p>
-<h3>What Collector Crypt handles</h3>
-<ul>
-<li><b>Packs and odds.</b> Odds are set by each machine. Gacha Guard does not touch them.</li>
-<li><b>The card.</b> Each pull is a graded card held in a vault, represented by a Solana NFT in your wallet.</li>
-<li><b>Instant buyback.</b> Collector Crypt offers a buyback on each pull for a limited time, at a rate set per machine and based on the card's insured value.</li>
-<li><b>Shipping.</b> You can redeem the card to have it shipped, which burns the NFT. Collector Crypt sets the fees and timing.</li>
-<li><b>Payments.</b> Packs are priced in USDC, plus a little SOL for the network fee.</li>
-</ul>
-<h3>What Gacha Guard handles</h3>
-<dl class="flow">
-<div><dt>1 <i>/</i> Open</dt><dd>You open a protected pack through Gacha Guard. One wallet approval pays the pack price to Collector Crypt and the 10% protection fee to Gacha Guard.</dd></div>
-<div><dt>2 <i>/</i> Read</dt><dd>Gacha Guard reads the pull on-chain: which pack, which card, and the card's insured value at pull time.</dd></div>
-<div><dt>3 <i>/</i> Tier</dt><dd>Your coverage is set from the lowest $GUARD balance in your pull window.</dd></div>
-<div><dt>4 <i>/</i> Rebate</dt><dd>The rebate is calculated from pack price, card value and coverage, then capped at $250.</dd></div>
-<div><dt>5 <i>/</i> Pay</dt><dd>You claim it and USDC is sent to the wallet that opened the pack.</dd></div>
-</dl>
-<h3>Card value is the insured value</h3>
-<p>Collector Crypt gives every card an <b>insured value</b>, a reference value it uses for buyback. It is not a market price and not an insurance policy. Gacha Guard uses the same number so the rebate and the buyback are measured the same way. The value is taken at the time of the pull. Later changes to the card's value do not change the rebate.</p>
-<h3>Buyback, selling and shipping</h3>
-<p>A rebate is worked out from the pull itself. What you do with the card afterwards (instant buyback, sale on a marketplace, transfer or shipping) does not change it. It also does not stop you from doing any of those things.</p>
-<div class="note warn"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg><p><b>Gacha Guard is a separate layer.</b> Packs, vaulting, buyback and shipping are Collector Crypt's services and follow Collector Crypt's terms. Questions about a card, a vault or a shipment go to Collector Crypt.</p></div>
-</section>
-<section id="claim">
-<h2 class="sec disp"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg>Claiming your rebate</h2>
-<ul>
-<li>Once a pull has settled, the rebate is worked out for you. There is nothing to submit or prove.</li>
-<li>You claim it with one wallet approval. USDC is sent to the wallet that opened the pack.</li>
-<li>Rebates are paid from the USDC rebate pool, so payouts depend on what the pool holds. The pool balance is shown live on the site.</li>
-<li>Pulls that are worth the pack price or more have no rebate, so there is nothing to claim.</li>
-<li>Every claim shows in the Live rebates feed with the wallet, pack, card and amount.</li>
-</ul>
-</section>
-<section id="fees">
-<h2 class="sec disp"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg>Where the fee goes</h2>
-<p>The protection fee is split in two, in the open:</p>
-<div class="tiers3" style="grid-template-columns:1fr 1fr">
-<div><small>RESERVE</small><b style="color:var(--good)">50%</b><span>Goes to the USDC pool that pays rebates.</span></div>
-<div><small>BURN</small><b style="color:var(--red)">50%</b><span>Buys $GUARD on the market and burns it.</span></div>
-</div>
-<p>The pool pays rebates. The burn reduces the $GUARD supply, which makes each tier's percentage of supply worth a little more over time. The fee is what keeps protection running, so it is charged on every protected pack, whether or not you get a rebate.</p>
-</section>
-<section id="calculator">
-<h2 class="sec disp"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg>Try the numbers</h2>
-<p>Pick a pack, a tier and what the card turns out to be worth.</p>
-<div class="calc" id="calc">
-<div class="in">
-<label>Pack<select id="cPack"><option value="25">Starter $25</option><option value="50" selected>Great $50</option><option value="100">Ultra $100</option><option value="500">Master $500</option></select></label>
-<label>Coverage tier<select id="cTier"><option value="0">No tier (0%)</option><option value="0.25">Holder (25%)</option><option value="0.5" selected>Collector (50%)</option><option value="1">Whale (100%)</option></select></label>
-<label>Card is worth ($)<input id="cCard" type="number" min="0" step="0.01" value="20" inputmode="decimal"></label>
-</div>
-<div class="out">
-<div class="row"><span>Pack + protection</span><b id="oTotal">$55.00</b></div>
-<div class="row"><span>Shortfall</span><b id="oShort">$30.00</b></div>
-<div class="row hi"><span>Back to you</span><b id="oBack">$15.00</b></div>
-<div class="row"><span>Not covered</span><b id="oNot">$15.00</b></div>
-</div>
-<div class="verdict" id="oVerdict"></div>
-</div>
-</section>
-<section id="risks">
-<h2 class="sec disp"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg>Risks and limits</h2>
-<ul>
-<li><b>You can still lose money.</b> The fee is always paid, and a rebate is only part of the shortfall unless you hold the top tier.</li>
-<li><b>The cap is $250.</b> Large shortfalls on Master packs are only partly covered.</li>
-<li><b>Payouts come from the pool.</b> If the pool is low, claims are limited by what it holds.</li>
-<li><b>Coverage depends on holding $GUARD.</b> If your balance falls below a tier's level during the pull window, the lower tier applies. $GUARD's price can go down as well as up.</li>
-<li><b>Insured value is a reference.</b> It may be above or below what a card sells for.</li>
-<li><b>Smart contracts and wallets carry risk.</b> Use a wallet you trust and check each approval before you sign.</li>
-<li><b>Availability can vary by region</b> and follows Collector Crypt's own restrictions.</li>
-</ul>
-<div class="note warn"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg><p><b>Not financial advice.</b> Gacha Guard is a rebate on a game of chance. It is not an investment and not insurance. Only open packs you are comfortable paying for.</p></div>
-</section>
-<section id="faq">
-<h2 class="sec disp"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg>FAQ</h2>
-<details><summary>Do I keep the card?</summary><div><p>Yes. The card goes to your wallet like any Collector Crypt pull. The rebate is paid in USDC on top.</p></div></details>
-<details><summary>Is the fee part of the rebate calculation?</summary><div><p>No. The shortfall uses the pack price only: pack price minus card value. The fee is paid on top and is not refunded.</p></div></details>
-<details><summary>What if I pull a card worth more than the pack?</summary><div><p>There is no shortfall and no rebate. Nothing is taken from you or from the card.</p></div></details>
-<details><summary>What happens if I sell the card back or ship it?</summary><div><p>Nothing changes for the rebate. It is worked out from the pull. You can use Collector Crypt's buyback, sell, transfer or ship the card as you normally would.</p></div></details>
-<details><summary>How is the card value decided?</summary><div><p>It is the insured value Collector Crypt shows for the card at the time of the pull, the same number the buyback uses.</p></div></details>
-<details><summary>Which tier will I get?</summary><div><p>It depends on the lowest $GUARD balance your wallet held from the moment you opened the pack until the rebate is paid: 0.1% of supply for Holder, 1% for Collector, 2% for Whale.</p></div></details>
-<details><summary>Why is the maximum $250?</summary><div><p>A cap keeps the pool able to pay many claims. It only affects large shortfalls, mostly on Master packs.</p></div></details>
-<details><summary>Can I use my own wallet from a hardware device?</summary><div><p>Any Solana wallet that can sign the pack approval works. The wallet that opens the pack is the wallet that receives the card and the rebate.</p></div></details>
-<details><summary>Who runs the packs?</summary><div><p>Collector Crypt. Gacha Guard does not run packs, hold cards or set odds.</p></div></details>
-</section>
-<section id="glossary">
-<h2 class="sec disp"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg>Glossary</h2>
-<dl class="gl">
-<dt>Pack price</dt><dd>What the pack costs before the protection fee.</dd>
-<dt>Protection fee</dt><dd>10% of the pack price, added on top when you open.</dd>
-<dt>Card value</dt><dd>The insured value Collector Crypt assigns to the card at the time of the pull.</dd>
-<dt>Shortfall</dt><dd>Pack price minus card value, never below $0.</dd>
-<dt>Coverage</dt><dd>The share of the shortfall that comes back: 25%, 50% or 100%.</dd>
-<dt>Rebate</dt><dd>Coverage times shortfall, capped at $250, paid in USDC.</dd>
-<dt>Not covered</dt><dd>The part of the shortfall that is not paid back.</dd>
-<dt>Pull window</dt><dd>From opening the pack until the rebate is paid. Your tier uses your lowest $GUARD balance in this time.</dd>
-<dt>Rebate pool</dt><dd>The USDC that pays rebates, topped up by half of every protection fee.</dd>
-<dt>Burn</dt><dd>Buying $GUARD and removing it from supply for good.</dd>
-</dl>
-</section>
-</article>
-</div>
+  <div class="head">
+    <div>
+      <h1 class="disp">Gacha Guard <span>docs</span></h1>
+      <p>Everything about how protected pulls work: what you pay, what comes back, how your coverage is set, and how it connects to Collector Crypt packs.</p>
+    </div>
+  </div>
+
+  <div class="layout">
+    <nav class="toc" aria-label="On this page" id="toc">
+      <h2>On this page</h2>
+      <a href="#overview">Overview</a>
+      <a href="#quickstart">Quick start</a>
+      <a href="#rebate">How a rebate is calculated</a>
+      <a href="#packs">Packs and the fee</a>
+      <a href="#tiers">Coverage tiers</a>
+      <a href="#collector-crypt">Collector Crypt integration</a>
+      <a href="#claim">Claiming your rebate</a>
+      <a href="#fees">Where the fee goes</a>
+      <a href="#calculator">Try the numbers</a>
+      <a href="#risks">Risks and limits</a>
+      <a href="#faq">FAQ</a>
+      <a href="#glossary">Glossary</a>
+    </nav>
+
+    <article>
+      <details class="mtoc"><summary>On this page</summary><div>
+        <p style="margin:0 0 10px"><a href="#overview">Overview</a> · <a href="#quickstart">Quick start</a> · <a href="#rebate">Rebates</a> · <a href="#packs">Packs and fee</a> · <a href="#tiers">Tiers</a> · <a href="#collector-crypt">Collector Crypt</a> · <a href="#claim">Claiming</a> · <a href="#fees">Fee split</a> · <a href="#calculator">Calculator</a> · <a href="#risks">Risks</a> · <a href="#faq">FAQ</a> · <a href="#glossary">Glossary</a></p>
+      </div></details>
+
+      <section id="overview">
+        <h2 class="sec disp"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg>Overview</h2>
+        <p class="lede">Gacha Guard adds a rebate to graded-card pack pulls. If the card you pull is worth less than the pack you paid for, part of the difference comes back to your wallet in USDC. You keep the card either way.</p>
+        <p>It works on top of Collector Crypt packs. Collector Crypt runs the packs, the odds, the vaulting and the buyback. Gacha Guard adds one thing: a protection fee when you open, and a rebate when the pull falls short.</p>
+        <ul>
+          <li><b>You keep the card.</b> A rebate never takes the card or pauses your buyback, sale or shipping options.</li>
+          <li><b>The fee is visible.</b> A flat 10% on top of the pack price, shown before you confirm.</li>
+          <li><b>How much comes back depends on $GUARD.</b> Holding $GUARD sets your coverage at 25%, 50% or 100% of the shortfall.</li>
+          <li><b>Rebates are capped at $250</b> per pack.</li>
+        </ul>
+        <div class="note"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg><p><b>Protection is not a guarantee of profit.</b> You still pay the fee, and a rebate only covers part of a bad pull unless you are in the top tier. See <a href="#risks">Risks and limits</a>.</p></div>
+      </section>
+
+      <section id="quickstart">
+        <h2 class="sec disp"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg>Quick start</h2>
+        <ol class="steps">
+          <li><div><b>Connect your Solana wallet</b><span>The wallet that holds your $GUARD is the wallet that opens the pack. Coverage is read from it.</span></div></li>
+          <li><div><b>Pick a protected pack</b><span>Starter $25, Great $50, Ultra $100 or Master $500. The total shown includes the 10% protection fee.</span></div></li>
+          <li><div><b>Open it</b><span>One approval pays for the pack and the fee. Your card lands in your wallet like any Collector Crypt pull.</span></div></li>
+          <li><div><b>Claim your rebate</b><span>If the card is worth less than the pack, your rebate shows as ready. Claim it and USDC arrives in the same wallet.</span></div></li>
+        </ol>
+      </section>
+
+      <section id="rebate">
+        <h2 class="sec disp"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg>How a rebate is calculated</h2>
+        <p>The rebate is a share of the <b>shortfall</b>: how far the card falls below the pack price.</p>
+        <div class="formula">shortfall = <b>pack price</b> − <b>card value</b>  (never below 0)<br>rebate&nbsp;&nbsp;&nbsp;= <b>coverage</b> × shortfall<br>paid&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= min(<b>rebate</b>, $250)</div>
+        <ul>
+          <li><b>Pack price</b> is the price of the pack before the protection fee. The fee is not part of the shortfall.</li>
+          <li><b>Card value</b> is the insured value Collector Crypt assigns to the card at the time of the pull. See <a href="#collector-crypt">the integration</a>.</li>
+          <li><b>Coverage</b> is 25%, 50% or 100%, set by your <a href="#tiers">$GUARD tier</a>.</li>
+          <li>If the card is worth the pack price or more, the shortfall is $0 and there is no rebate. Nothing is taken back.</li>
+          <li>Amounts are rounded to the nearest cent.</li>
+        </ul>
+        <h3>Example: Great pack ($50), you pay $55</h3>
+        <div class="tw"><table>
+          <thead><tr><th>Card is worth</th><th class="n">Shortfall</th><th class="n">Holder 25%</th><th class="n">Collector 50%</th><th class="n">Whale 100%</th></tr></thead>
+          <tbody>
+            <tr><td><b>$5.00</b></td><td class="n">$45.00</td><td class="n g">$11.25</td><td class="n g">$22.50</td><td class="n g">$45.00</td></tr>
+            <tr><td><b>$20.00</b></td><td class="n">$30.00</td><td class="n g">$7.50</td><td class="n g">$15.00</td><td class="n g">$30.00</td></tr>
+            <tr><td><b>$50.00</b></td><td class="n">$0.00</td><td class="n">$0.00</td><td class="n">$0.00</td><td class="n">$0.00</td></tr>
+            <tr><td><b>$80.00</b></td><td class="n">$0.00</td><td class="n">$0.00</td><td class="n">$0.00</td><td class="n">$0.00</td></tr>
+          </tbody></table></div>
+        <p>Take the $20 card at the Collector tier. You paid $55 and hold a $20 card. The rebate is $15. Without protection you would be down $30 on the pull ($50 pack, $20 card). With it you are down $20 ($55 paid, minus the $15 rebate, minus the $20 card). That is $10 better, not $15, because of the $5 fee.</p>
+        <h3>The $250 cap</h3>
+        <p>A Master pack ($500) with a card worth $40 leaves a $460 shortfall. At 100% coverage that is $460, but the rebate is capped at <b>$250</b>. At 50% it is $230, under the cap, so you receive $230.</p>
+      </section>
+
+      <section id="packs">
+        <h2 class="sec disp"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg>Packs and the fee</h2>
+        <p>Four protected packs. The protection fee is 10% of the pack price and is added on top. Collector Crypt receives the pack price. The fee is Gacha Guard's.</p>
+        <div class="tw"><table>
+          <thead><tr><th>Pack</th><th class="n">Pack price</th><th class="n">Fee (10%)</th><th class="n">You pay</th><th class="n">Top rebate at 100%</th></tr></thead>
+          <tbody>
+            <tr><td><b>Starter</b></td><td class="n">$25</td><td class="n">$2.50</td><td class="n"><b>$27.50</b></td><td class="n">$25</td></tr>
+            <tr><td><b>Great</b></td><td class="n">$50</td><td class="n">$5.00</td><td class="n"><b>$55.00</b></td><td class="n">$50</td></tr>
+            <tr><td><b>Ultra</b></td><td class="n">$100</td><td class="n">$10.00</td><td class="n"><b>$110.00</b></td><td class="n">$100</td></tr>
+            <tr><td><b>Master</b></td><td class="n">$500</td><td class="n">$50.00</td><td class="n"><b>$550.00</b></td><td class="n">$250 (cap)</td></tr>
+          </tbody></table></div>
+        <p>"Top rebate" is the most a pack can pay back, which only happens if the card is worth $0 and you hold the top tier. Each protected pack matches the Collector Crypt pack at the same price. You also need a small amount of SOL for the Solana network fee, the same as any Collector Crypt pull.</p>
+      </section>
+
+      <section id="tiers">
+        <h2 class="sec disp"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg>Coverage tiers</h2>
+        <p>Your coverage is set by how much $GUARD your wallet holds, as a share of the total supply.</p>
+        <div class="tiers3">
+          <div><small>HOLDER</small><b>25%</b><span>Hold 0.1% of supply or more</span></div>
+          <div><small>COLLECTOR</small><b>50%</b><span>Hold 1% of supply or more</span></div>
+          <div><small>WHALE</small><b>100%</b><span>Hold 2% of supply or more</span></div>
+        </div>
+        <h3>The pull window</h3>
+        <p>The tier that applies to a pull is based on the <b>lowest</b> $GUARD balance your wallet held during the <b>pull window</b>: from the moment you open the pack until your rebate is paid. Buying $GUARD just before you open, then selling straight after, will not raise your tier. If you hold below 0.1% at any point in the window, the pull has no coverage.</p>
+        <p>The live tier and balance are shown on the site under <b>Your coverage</b> once your wallet is connected.</p>
+      </section>
+
+      <section id="collector-crypt">
+        <h2 class="sec disp"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg>Collector Crypt integration</h2>
+        <p>Collector Crypt is a Solana platform for tokenized graded cards. A pack pull gives you an NFT that represents a real graded card held in a vault. Gacha Guard reads that pull and pays the rebate. It does not change the pack, the odds or the card.</p>
+        <h3>What Collector Crypt handles</h3>
+        <ul>
+          <li><b>Packs and odds.</b> Odds are set by each machine. Gacha Guard does not touch them.</li>
+          <li><b>The card.</b> Each pull is a graded card held in a vault, represented by a Solana NFT in your wallet.</li>
+          <li><b>Instant buyback.</b> Collector Crypt offers a buyback on each pull for a limited time, at a rate set per machine and based on the card's insured value.</li>
+          <li><b>Shipping.</b> You can redeem the card to have it shipped, which burns the NFT. Collector Crypt sets the fees and timing.</li>
+          <li><b>Payments.</b> Packs are priced in USDC, plus a little SOL for the network fee.</li>
+        </ul>
+        <h3>What Gacha Guard handles</h3>
+        <dl class="flow">
+          <div><dt>1 <i>/</i> Open</dt><dd>You open a protected pack through Gacha Guard. One wallet approval pays the pack price to Collector Crypt and the 10% protection fee to Gacha Guard.</dd></div>
+          <div><dt>2 <i>/</i> Read</dt><dd>Gacha Guard reads the pull on-chain: which pack, which card, and the card's insured value at pull time.</dd></div>
+          <div><dt>3 <i>/</i> Tier</dt><dd>Your coverage is set from the lowest $GUARD balance in your pull window.</dd></div>
+          <div><dt>4 <i>/</i> Rebate</dt><dd>The rebate is calculated from pack price, card value and coverage, then capped at $250.</dd></div>
+          <div><dt>5 <i>/</i> Pay</dt><dd>You claim it and USDC is sent to the wallet that opened the pack.</dd></div>
+        </dl>
+        <h3>Card value is the insured value</h3>
+        <p>Collector Crypt gives every card an <b>insured value</b>, a reference value it uses for buyback. It is not a market price and not an insurance policy. Gacha Guard uses the same number so the rebate and the buyback are measured the same way. The value is taken at the time of the pull. Later changes to the card's value do not change the rebate.</p>
+        <h3>Buyback, selling and shipping</h3>
+        <p>A rebate is worked out from the pull itself. What you do with the card afterwards (instant buyback, sale on a marketplace, transfer or shipping) does not change it. It also does not stop you from doing any of those things.</p>
+        <div class="note warn"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg><p><b>Gacha Guard is a separate layer.</b> Packs, vaulting, buyback and shipping are Collector Crypt's services and follow Collector Crypt's terms. Questions about a card, a vault or a shipment go to Collector Crypt.</p></div>
+      </section>
+
+      <section id="claim">
+        <h2 class="sec disp"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg>Claiming your rebate</h2>
+        <ul>
+          <li>Once a pull has settled, the rebate is worked out for you. There is nothing to submit or prove.</li>
+          <li>You claim it with one wallet approval. USDC is sent to the wallet that opened the pack.</li>
+          <li>Rebates are paid from the USDC rebate pool, so payouts depend on what the pool holds. The pool balance is shown live on the site.</li>
+          <li>Pulls that are worth the pack price or more have no rebate, so there is nothing to claim.</li>
+          <li>Every claim shows in the Live rebates feed with the wallet, pack, card and amount.</li>
+        </ul>
+      </section>
+
+      <section id="fees">
+        <h2 class="sec disp"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg>Where the fee goes</h2>
+        <p>The protection fee is split in two, in the open:</p>
+        <div class="tiers3" style="grid-template-columns:1fr 1fr">
+          <div><small>RESERVE</small><b style="color:var(--good)">50%</b><span>Goes to the USDC pool that pays rebates.</span></div>
+          <div><small>BURN</small><b style="color:var(--red)">50%</b><span>Buys $GUARD on the market and burns it.</span></div>
+        </div>
+        <p>The pool pays rebates. The burn reduces the $GUARD supply, which makes each tier's percentage of supply worth a little more over time. The fee is what keeps protection running, so it is charged on every protected pack, whether or not you get a rebate.</p>
+      </section>
+
+      <section id="calculator">
+        <h2 class="sec disp"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg>Try the numbers</h2>
+        <p>Pick a pack, a tier and what the card turns out to be worth.</p>
+        <div class="calc" id="calc">
+          <div class="in">
+            <label>Pack<select id="cPack"><option value="25">Starter $25</option><option value="50" selected>Great $50</option><option value="100">Ultra $100</option><option value="500">Master $500</option></select></label>
+            <label>Coverage tier<select id="cTier"><option value="0">No tier (0%)</option><option value="0.25">Holder (25%)</option><option value="0.5" selected>Collector (50%)</option><option value="1">Whale (100%)</option></select></label>
+            <label>Card is worth ($)<input id="cCard" type="number" min="0" step="0.01" value="20" inputmode="decimal"></label>
+          </div>
+          <div class="out">
+            <div class="row"><span>Pack + protection</span><b id="oTotal">$55.00</b></div>
+            <div class="row"><span>Shortfall</span><b id="oShort">$30.00</b></div>
+            <div class="row hi"><span>Back to you</span><b id="oBack">$15.00</b></div>
+            <div class="row"><span>Not covered</span><b id="oNot">$15.00</b></div>
+          </div>
+          <div class="verdict" id="oVerdict"></div>
+        </div>
+      </section>
+
+      <section id="risks">
+        <h2 class="sec disp"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg>Risks and limits</h2>
+        <ul>
+          <li><b>You can still lose money.</b> The fee is always paid, and a rebate is only part of the shortfall unless you hold the top tier.</li>
+          <li><b>The cap is $250.</b> Large shortfalls on Master packs are only partly covered.</li>
+          <li><b>Payouts come from the pool.</b> If the pool is low, claims are limited by what it holds.</li>
+          <li><b>Coverage depends on holding $GUARD.</b> If your balance falls below a tier's level during the pull window, the lower tier applies. $GUARD's price can go down as well as up.</li>
+          <li><b>Insured value is a reference.</b> It may be above or below what a card sells for.</li>
+          <li><b>Smart contracts and wallets carry risk.</b> Use a wallet you trust and check each approval before you sign.</li>
+          <li><b>Availability can vary by region</b> and follows Collector Crypt's own restrictions.</li>
+        </ul>
+        <div class="note warn"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg><p><b>Not financial advice.</b> Gacha Guard is a rebate on a game of chance. It is not an investment and not insurance. Only open packs you are comfortable paying for.</p></div>
+      </section>
+
+      <section id="faq">
+        <h2 class="sec disp"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg>FAQ</h2>
+        <details><summary>Do I keep the card?</summary><div><p>Yes. The card goes to your wallet like any Collector Crypt pull. The rebate is paid in USDC on top.</p></div></details>
+        <details><summary>Is the fee part of the rebate calculation?</summary><div><p>No. The shortfall uses the pack price only: pack price minus card value. The fee is paid on top and is not refunded.</p></div></details>
+        <details><summary>What if I pull a card worth more than the pack?</summary><div><p>There is no shortfall and no rebate. Nothing is taken from you or from the card.</p></div></details>
+        <details><summary>What happens if I sell the card back or ship it?</summary><div><p>Nothing changes for the rebate. It is worked out from the pull. You can use Collector Crypt's buyback, sell, transfer or ship the card as you normally would.</p></div></details>
+        <details><summary>How is the card value decided?</summary><div><p>It is the insured value Collector Crypt shows for the card at the time of the pull, the same number the buyback uses.</p></div></details>
+        <details><summary>Which tier will I get?</summary><div><p>It depends on the lowest $GUARD balance your wallet held from the moment you opened the pack until the rebate is paid: 0.1% of supply for Holder, 1% for Collector, 2% for Whale.</p></div></details>
+        <details><summary>Why is the maximum $250?</summary><div><p>A cap keeps the pool able to pay many claims. It only affects large shortfalls, mostly on Master packs.</p></div></details>
+        <details><summary>Can I use my own wallet from a hardware device?</summary><div><p>Any Solana wallet that can sign the pack approval works. The wallet that opens the pack is the wallet that receives the card and the rebate.</p></div></details>
+        <details><summary>Who runs the packs?</summary><div><p>Collector Crypt. Gacha Guard does not run packs, hold cards or set odds.</p></div></details>
+      </section>
+
+      <section id="glossary">
+        <h2 class="sec disp"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#capsule"/></svg>Glossary</h2>
+        <dl class="gl">
+          <dt>Pack price</dt><dd>What the pack costs before the protection fee.</dd>
+          <dt>Protection fee</dt><dd>10% of the pack price, added on top when you open.</dd>
+          <dt>Card value</dt><dd>The insured value Collector Crypt assigns to the card at the time of the pull.</dd>
+          <dt>Shortfall</dt><dd>Pack price minus card value, never below $0.</dd>
+          <dt>Coverage</dt><dd>The share of the shortfall that comes back: 25%, 50% or 100%.</dd>
+          <dt>Rebate</dt><dd>Coverage times shortfall, capped at $250, paid in USDC.</dd>
+          <dt>Not covered</dt><dd>The part of the shortfall that is not paid back.</dd>
+          <dt>Pull window</dt><dd>From opening the pack until the rebate is paid. Your tier uses your lowest $GUARD balance in this time.</dd>
+          <dt>Rebate pool</dt><dd>The USDC that pays rebates, topped up by half of every protection fee.</dd>
+          <dt>Burn</dt><dd>Buying $GUARD and removing it from supply for good.</dd>
+        </dl>
+      </section>
+    </article>
+  </div>
 </main>
+
 <footer><div class="wrap">
-<div>Gacha Guard is an independent project that adds rebates to Collector Crypt packs. Collector Crypt and its name belong to their owners.</div>
-<div class="mono" style="font:600 13px var(--mono);overflow-wrap:anywhere">$GUARD contract: 7kGZskbwU6gzUSmbgF9tA8Mt3LeirZzb1WYvkUDHpump</div>
-<div><a href="https://x.com/gachaguardsol" target="_blank" rel="noopener noreferrer" style="font-weight:800;color:var(--ink)">Follow @gachaguardsol on X</a></div>
-<div>Not financial advice. Rebates depend on the pool and are not guaranteed.</div>
+  <div>Gacha Guard is an independent project that adds rebates to Collector Crypt packs. Collector Crypt and its name belong to their owners.</div>
+  <div class="mono" style="font:600 13px var(--mono);overflow-wrap:anywhere">$GUARD contract: 7kGZskbwU6gzUSmbgF9tA8Mt3LeirZzb1WYvkUDHpump</div>
+  <div><a href="https://x.com/gachaguardsol" target="_blank" rel="noopener noreferrer" style="font-weight:800;color:var(--ink)">Follow @gachaguardsol on X</a></div>
+  <div>Not financial advice. Rebates depend on the pool and are not guaranteed.</div>
 </div></footer>
+
 <script>
 (function(){
-var $=function(i){return document.getElementById(i)};
-function usd(v){return '$'+v.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,',')}
-function calc(){
-var pack=+$('cPack').value,cover=+$('cTier').value,card=Math.max(0,parseFloat($('cCard').value)||0);
-var fee=pack*0.10,short=Math.max(0,pack-card),reb=Math.min(250,Math.round(short*cover*100)/100);
-var notc=Math.max(0,short-reb);
-$('oTotal').textContent=usd(pack+fee);$('oShort').textContent=usd(short);$('oBack').textContent=usd(reb);$('oNot').textContent=usd(notc);
-var without=short,withp=pack+fee-reb-card;
-var v;
-if(short===0)v='The card is worth the pack price or more, so there is no rebate. You paid <b>'+usd(fee)+'</b> in fees.';
-else if(cover===0)v='No tier, so no coverage. You are down <b>'+usd(without+fee)+'</b> including the fee.';
-else v='Without protection you would be down <b>'+usd(without)+'</b>. With it you are down <b>'+usd(Math.max(0,withp))+'</b>, including the '+usd(fee)+' fee.';
-$('oVerdict').innerHTML=v;
-}
-['cPack','cTier','cCard'].forEach(function(i){$(i).addEventListener('input',calc);$(i).addEventListener('change',calc)});
-calc();
-var links=document.querySelectorAll('#toc a');
-if('IntersectionObserver' in window){
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){Array.prototype.forEach.call(links,function(a){a.classList.toggle('cur',a.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-20% 0px -70% 0px'});
-document.querySelectorAll('article section').forEach(function(s){io.observe(s)});
-}
+  var $=function(i){return document.getElementById(i)};
+  function usd(v){return '$'+v.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,',')}
+  function calc(){
+    var pack=+$('cPack').value,cover=+$('cTier').value,card=Math.max(0,parseFloat($('cCard').value)||0);
+    var fee=pack*0.10,short=Math.max(0,pack-card),reb=Math.min(250,Math.round(short*cover*100)/100);
+    var notc=Math.max(0,short-reb);
+    $('oTotal').textContent=usd(pack+fee);$('oShort').textContent=usd(short);$('oBack').textContent=usd(reb);$('oNot').textContent=usd(notc);
+    var without=short,withp=pack+fee-reb-card;
+    var v;
+    if(short===0)v='The card is worth the pack price or more, so there is no rebate. You paid <b>'+usd(fee)+'</b> in fees.';
+    else if(cover===0)v='No tier, so no coverage. You are down <b>'+usd(without+fee)+'</b> including the fee.';
+    else v='Without protection you would be down <b>'+usd(without)+'</b>. With it you are down <b>'+usd(Math.max(0,withp))+'</b>, including the '+usd(fee)+' fee.';
+    $('oVerdict').innerHTML=v;
+  }
+  ['cPack','cTier','cCard'].forEach(function(i){$(i).addEventListener('input',calc);$(i).addEventListener('change',calc)});
+  calc();
+  var links=document.querySelectorAll('#toc a');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){Array.prototype.forEach.call(links,function(a){a.classList.toggle('cur',a.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-20% 0px -70% 0px'});
+    document.querySelectorAll('article section').forEach(function(s){io.observe(s)});
+  }
 })();
 </script>
 </body>
