@@ -342,6 +342,8 @@ html body .sf-toast{background:var(--ink);color:#FFF3C4;border:2px solid var(--i
 html body .sf-modal :focus-visible,html body .sf-menu :focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 @media (max-width:480px){html body .sf-modal{padding:20px}html body .sf-modal::before{margin:-20px -20px 18px}}
 html body .sf-tiers[hidden]{display:none}
+.xl{display:inline-grid;place-items:center;width:44px;height:44px;flex:none;background:var(--surface);color:var(--ink);border:2px solid var(--stroke);border-radius:12px;box-shadow:0 3px 0 var(--stroke);text-decoration:none}.xl svg{width:18px;height:18px}.xl:hover{background:var(--surface2)}.xl:active{transform:translateY(3px);box-shadow:none}.flinks{display:flex;gap:14px;flex-wrap:wrap;align-items:center}.flinks a{font-weight:800;color:var(--ink)}
+@media (max-width:620px){.navr .xl{display:none}}
 </style>
 </head>
 <body>
@@ -353,7 +355,7 @@ html body .sf-tiers[hidden]{display:none}
 <header class="nav">
 <a class="brand" href="#top" aria-label="Gacha Guard home"><svg viewBox="0 0 40 44" id="logo" aria-hidden="true"></svg><span class="wm"><b>Gacha Guard</b><small>pack protection</small></span><span class="tk">$GUARD</span></a>
 <nav class="links" data-nav aria-label="Main"><a href="#sample">Sample pull</a><a href="#coverage">Coverage</a><a href="#packs">Packs</a><a href="#live">Live rebates</a><a href="#faq">FAQ</a><a href="docs.html">Docs</a></nav>
-<div class="navr"><span class="pool" title="USDC in the rebate pool"><i></i><span data-stat="pool" data-fmt="usd0">$0</span></span><button class="btn" data-wallet-btn aria-haspopup="menu">Connect wallet</button><button class="tog" data-nav-toggle aria-label="Menu" aria-expanded="false">&#9776;</button></div>
+<div class="navr"><span class="pool" title="USDC in the rebate pool"><i></i><span data-stat="pool" data-fmt="usd0">$0</span></span><a class="xl" href="https://x.com/gachaguardsol" target="_blank" rel="noopener noreferrer" aria-label="Gacha Guard on X"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><button class="btn" data-wallet-btn aria-haspopup="menu">Connect wallet</button><button class="tog" data-nav-toggle aria-label="Menu" aria-expanded="false">&#9776;</button></div>
 </header>
 </div></div>
 <main id="top">
@@ -486,6 +488,7 @@ html body .sf-tiers[hidden]{display:none}
 </main>
 <footer><div class="wrap">
 <div>Gacha Guard. Rebates are variable and not guaranteed. Only open packs you are comfortable paying for.<br>Creatures, cards and pack art are original.</div>
+<div class="flinks"><a href="https://x.com/gachaguardsol" target="_blank" rel="noopener noreferrer">Follow @gachaguardsol on X</a><a href="docs.html">Docs</a></div>
 <div class="mono" style="font-size:13px">$GUARD <span data-contract></span></div>
 </div></footer>
 <script>
