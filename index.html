@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Gacha Guard</title>
 <meta name="description" content="Open graded-card packs with protection. Part of every bad pull comes back in USDC.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#F5B700">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=JetBrains+Mono:wght@500;600;800&display=swap" rel="stylesheet">
@@ -336,6 +341,7 @@ html body .sf-card{filter:drop-shadow(5px 6px 0 var(--ink))}
 html body .sf-toast{background:var(--ink);color:#FFF3C4;border:2px solid var(--ink);border-radius:12px;box-shadow:0 4px 0 var(--machine);font-weight:800}
 html body .sf-modal :focus-visible,html body .sf-menu :focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 @media (max-width:480px){html body .sf-modal{padding:20px}html body .sf-modal::before{margin:-20px -20px 18px}}
+html body .sf-tiers[hidden]{display:none}
 </style>
 </head>
 <body>
@@ -373,7 +379,7 @@ html body .sf-modal :focus-visible,html body .sf-menu :focus-visible{outline:3px
 <div class="packzone">
 <div class="pz" id="pz">
 <div class="reveal" id="reveal" aria-live="polite"></div>
-<button class="dpack" id="dpack" aria-label="Open the demo pack"><span id="packArt"></span><span class="sheen"></span></button>
+<button class="dpack" id="dpack" aria-label="Open the pack"><span id="packArt"></span><span class="sheen"></span></button>
 </div>
 <p class="hint" id="hint"><span class="tap"></span>Tap the pack to open it</p>
 </div>
@@ -479,7 +485,7 @@ html body .sf-modal :focus-visible,html body .sf-menu :focus-visible{outline:3px
 </div></section>
 </main>
 <footer><div class="wrap">
-<div>Gacha Guard. Rebates are variable and not guaranteed. Only open packs you are comfortable paying for.<br>Demo data. Not a live product. Creatures, cards and packs are original demo art.</div>
+<div>Gacha Guard. Rebates are variable and not guaranteed. Only open packs you are comfortable paying for.<br>Creatures, cards and pack art are original.</div>
 <div class="mono" style="font-size:13px">$GUARD <span data-contract></span></div>
 </div></footer>
 <script>
@@ -1080,7 +1086,7 @@ var wrap = document.createElement('div');
 wrap.innerHTML =
 '<div class="sf-back" id="sfWallet" hidden><div class="sf-modal" role="dialog" aria-modal="true" aria-labelledby="sfWT">' +
 '<button class="sf-x" data-close aria-label="Close">&times;</button><h2 id="sfWT">Connect a wallet</h2>' +
-'<p class="sf-sub">Pick a wallet to continue. This is a demo, so nothing is really connected.</p>' +
+'<p class="sf-sub">Pick a wallet to continue.</p>' +
 '<div class="sf-list" id="sfList"></div>' +
 '<div class="sf-center sf-hide" id="sfConn"><div class="sf-spin"></div><p id="sfConnT" style="margin:0 0 8px">Approve the connection in your wallet</p><button class="sf-link" id="sfCancel">Cancel</button></div>' +
 '<p class="sf-err sf-hide" id="sfErr" role="alert">Connection rejected. Try again.</p></div></div>' +
@@ -1090,8 +1096,8 @@ wrap.innerHTML =
 '<div class="sf-row"><span class="sf-mut">Wallet</span><button class="sf-link" id="sfCopy" title="Copy address"><span id="sfFull"></span> <span id="sfCopied"></span></button></div>' +
 '<div class="sf-row"><span class="sf-mut">Balance</span><span class="sf-num" id="sfBal"></span></div>' +
 '<div class="sf-row"><span class="sf-mut">Your tier</span><strong id="sfTierName"></strong></div>' +
-'<div class="sf-row" style="padding-bottom:2px"><span class="sf-mut">Demo: pretend you hold</span></div>' +
-'<div class="sf-tiers" id="sfTiers"></div>' +
+'' +
+'<div class="sf-tiers" id="sfTiers" hidden></div>' +
 '<button class="sf-item" id="sfDisc">Disconnect</button></div>';
 while (wrap.firstChild) document.body.appendChild(wrap.firstChild);
 var list = $('#sfList');
@@ -1151,7 +1157,7 @@ $('#sfConnT').textContent = 'Approve the connection in ' + w.name;
 timer = setTimeout(function () {
 if (rnd() < 0.08) { $('#sfConn').classList.add('sf-hide'); $('#sfList').classList.remove('sf-hide'); $('#sfErr').classList.remove('sf-hide'); return; }
 W.connected = true; W.wallet = w.name; W.addr = addr(rnd, 44); W.sol = 0.6 + rnd() * 24; W.usdc = 80 + rnd() * 1900;
-$('#sfWallet').hidden = true; render(); toast('Connected with ' + w.name + ' (demo)');
+$('#sfWallet').hidden = true; render(); toast('Connected with ' + w.name + '');
 if (pending) { var p = pending; pending = null; openPack(p); }
 }, 1400);
 }
@@ -1209,7 +1215,7 @@ if (!W.connected) { pending = pack; openWallet(); return; }
 lastFocus = lastFocus || document.activeElement;
 var fee = pack * FEE, total = pack + fee;
 $('#sfPack').hidden = false;
-body('<div class="sf-center"><div class="sf-spin"></div><h2 id="sfPT">Paying ' + usd(total) + '</h2><p class="sf-sub">' + usd(pack) + ' pack + ' + usd(fee) + ' protection. Demo payment only.</p></div>');
+body('<div class="sf-center"><div class="sf-spin"></div><h2 id="sfPT">Paying ' + usd(total) + '</h2><p class="sf-sub">' + usd(pack) + ' pack + ' + usd(fee) + ' protection.</p></div>');
 timer = setTimeout(function () {
 body('<div class="sf-center"><div class="sf-spin"></div><h2 id="sfPT">Opening your pack</h2><p class="sf-sub">Buying the pack and sending you the card.</p></div>');
 timer = setTimeout(function () { reveal(pack, fee, total); }, 1100);
@@ -1341,7 +1347,7 @@ function led(){var t=$('ledText');if(t)t.textContent=PACKS[S.calc.pack].n.toUppe
 function seal(arrive){
 opened=false;pz.classList.remove('open');
 $('packArt').innerHTML=packSvg(S.calc.pack,'st');
-$('dpack').setAttribute('aria-label','Open the '+PACKS[S.calc.pack].n+' demo pack');
+$('dpack').setAttribute('aria-label','Open the '+PACKS[S.calc.pack].n+' pack');
 hint.innerHTML='<span class="tap"></span>Tap the pack to open it';
 if(arrive){pz.classList.remove('arrive');void pz.offsetWidth;pz.classList.add('arrive')}
 }
