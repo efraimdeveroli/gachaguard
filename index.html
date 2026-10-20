@@ -366,6 +366,34 @@ html body .sf-tiers[hidden]{display:none}
 .navr{margin-left:auto}.tog{display:grid;place-items:center}
 }
 @media (max-width:400px){.nav{gap:8px;padding-left:10px;padding-right:10px}.navr{gap:6px}.navr .btn{padding-left:12px;padding-right:12px;font-size:13px}.brand .wm b{font-size:16px}}
+
+/* realistic slab */
+.slab{background:linear-gradient(150deg,rgba(255,255,255,.95),rgba(214,220,232,.9) 38%,rgba(246,248,252,.96) 55%,rgba(188,196,212,.92));border-radius:16px;padding:10px 10px 8px;box-shadow:inset 0 0 0 1px #fff,inset 0 0 0 5px rgba(255,255,255,.55),inset 0 0 0 6px rgba(110,120,140,.4),inset 0 -10px 18px -8px rgba(80,90,110,.35),0 22px 30px -14px rgba(20,20,30,.55),0 5px 0 rgba(28,23,20,.2);overflow:hidden}
+.slab::after{content:"";position:absolute;inset:0;border-radius:16px;pointer-events:none;z-index:4;background:linear-gradient(112deg,rgba(255,255,255,0) 18%,rgba(255,255,255,.55) 26%,rgba(255,255,255,0) 34%,rgba(255,255,255,0) 66%,rgba(255,255,255,.28) 72%,rgba(255,255,255,0) 78%)}
+.slab::before{content:"";position:absolute;left:12px;right:12px;top:6px;height:1px;background:rgba(90,100,120,.35);z-index:3}
+.slab .lbl{background:#FBFAF6;border:1px solid #C9C6BC;border-radius:3px;display:block;color:#15151A;box-shadow:inset 0 0 0 2px #fff,0 1px 0 rgba(255,255,255,.7),0 2px 5px rgba(0,0,0,.25);margin-top:2px}
+.slab .lbl .lstripe{display:flex;align-items:center;gap:6px;padding:4px 7px;background:linear-gradient(90deg,#B8211E,#D92D2A 55%,#E88A00);color:#fff;font:900 8.5px var(--f);font-stretch:112%;letter-spacing:.08em}
+.slab .lbl .lstripe svg{width:12px;height:13px}
+.slab .lbl .holosticker{margin-left:auto;width:19px;height:19px;border-radius:50%;background:conic-gradient(from 20deg,#ff4d6d,#ffd24d,#5dffa0,#4dd0ff,#9a6bff,#ff6bd6,#ff4d6d);box-shadow:inset 0 0 0 2px rgba(255,255,255,.7),0 0 0 1px rgba(0,0,0,.25);position:relative}
+.slab .lbl .holosticker::after{content:"";position:absolute;inset:5px;border-radius:50%;background:#fff;opacity:.55}
+.slab .lbl .lbody{display:grid;grid-template-columns:1fr 62px}
+.slab .lbl .lt{padding:6px 7px 6px 9px;display:grid;gap:1px;min-width:0}
+.slab .lbl .lt b{font:800 11.5px/1.2 var(--f);color:#15151A;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.slab .lbl .lt span{font:600 9.5px/1.25 var(--f);color:#3C3C44;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.slab .lbl .bc{display:block;height:12px;margin-top:5px;width:88%;fill:#15151A;background:none}
+.slab .lbl .lt small{font:700 8.5px var(--mono);color:#4A4A52;letter-spacing:.06em;margin-top:2px}
+.slab .lbl .gr{border-left:1px solid #D4D1C7;background:#F1EFE8;padding:6px 4px 7px;display:grid;align-content:center;justify-items:center;text-align:center}
+.slab .lbl .gr span{font:800 7.5px/1.15 var(--f);letter-spacing:.05em;color:#15151A;margin-bottom:3px}
+.slab .lbl .gr strong{display:block;width:auto;height:auto;background:none;color:#B8211E;font:900 30px/1 var(--f);font-stretch:112%;border-radius:0}
+.slab .well{margin-top:8px;position:relative;background:linear-gradient(180deg,#2B2D34,#1C1D22);border-radius:6px;padding:12px 14px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18),inset 0 0 0 4px #0F1013,inset 0 0 0 5px rgba(255,255,255,.1),inset 0 6px 14px rgba(0,0,0,.7)}
+.slab .weld{position:absolute;top:30%;bottom:30%;width:2px;background:rgba(255,255,255,.12);border-radius:2px}.slab .weld.l{left:3px}.slab .weld.r{right:3px}
+.slab .holo{position:relative;perspective:700px;transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .15s ease-out;border-radius:8px;box-shadow:0 10px 18px -4px rgba(0,0,0,.65),0 0 0 1px rgba(0,0,0,.6)}
+.slab .holo svg{display:block;width:100%;height:auto}
+.slab .holo::after{content:"";position:absolute;inset:0;border-radius:8px;pointer-events:none;mix-blend-mode:color-dodge;opacity:.42;background:radial-gradient(circle at var(--mx,30%) var(--my,25%),rgba(255,255,255,.95),rgba(255,255,255,0) 38%),linear-gradient(115deg,rgba(255,77,109,.5),rgba(255,210,77,.5),rgba(93,255,160,.5),rgba(77,208,255,.5),rgba(154,107,255,.5),rgba(255,77,109,.5));background-size:100% 100%,260% 260%;background-position:0 0,var(--mx,30%) var(--my,25%)}
+.slab .glare{position:absolute;inset:0;border-radius:6px;pointer-events:none;background:linear-gradient(105deg,rgba(255,255,255,0) 30%,rgba(255,255,255,.2) 42%,rgba(255,255,255,0) 52%),linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,0) 30%)}
+.slab .val{color:#15151A;margin:10px 0 2px}
+.slab .val small{color:#4A4A52}
+.slab .ill{margin:0;text-align:center;font:700 9.5px var(--f);color:#5A5A62}
 </style>
 </head>
 <body>
@@ -418,9 +446,10 @@ html body .sf-tiers[hidden]{display:none}
   <div class="spl">
     <div class="spl-h"><h2 class="disp">Sample pull</h2><p>What a protected pull pays back, using the graded card shown here.</p><button class="btn ghost sm" id="another">Pull another card</button></div>
     <div class="slab" id="slab">
-      <div class="lbl"><div class="top"><svg viewBox="0 0 40 44" id="lblLogo" aria-hidden="true"></svg><span>GACHA GUARD GRADING</span><span>Protected pull</span></div><div class="lt"><b id="slName">Tidal Heron GG</b><span>Gacha Guard (2026)</span><span id="slSet">Guardian Base - 047/120</span><span>Holo Rare</span><i class="bc" aria-hidden="true"></i><small id="slCert">0000000000</small></div><div class="gr"><span id="slGl">GEM MINT</span><strong id="slG">10</strong></div></div>
-      <div class="well"><div class="holo" id="holo"></div></div>
+      <div class="lbl"><div class="lstripe"><svg viewBox="0 0 40 44" id="lblLogo" aria-hidden="true"></svg><span>GACHA GUARD GRADING</span><em class="holosticker" aria-hidden="true"></em></div><div class="lbody"><div class="lt"><b id="slName">Tidal Heron GG</b><span>2026 Gacha Guard</span><span id="slSet">Guardian Base - 047/120</span><span>Holo Rare</span><svg class="bc" id="slBc" viewBox="0 0 120 14" preserveAspectRatio="none" aria-hidden="true"></svg><small id="slCert">0000000000</small></div><div class="gr"><span id="slGl">GEM MINT</span><strong id="slG">10</strong></div></div></div>
+      <div class="well"><span class="weld l" aria-hidden="true"></span><span class="weld r" aria-hidden="true"></span><div class="holo" id="holo"></div><div class="glare" aria-hidden="true"></div></div>
       <div class="val"><span data-out="card">$17.50</span><small>Insured value at pull</small></div>
+      <p class="ill">Sample card, illustrative art</p>
     </div>
     <div>
       <div class="bd-rows" aria-label="Result breakdown">
@@ -936,6 +965,9 @@ function cardSvg(name,opts){
   var hp=120+Math.floor(R()*11)*10,no=cardMeta(name).no,nn=(no<10?'00':no<100?'0':'')+no;
   var d1=20+Math.floor(R()*4)*10,d2=120+Math.floor(R()*7)*10;
   var sc=fullScene(type,id,R);
+  var gr=cardMeta(name).grade,WR=grng(name+'wear'),wear='';
+  if(gr<10){var nn2=gr===9?2:5;for(var wi=0;wi<nn2;wi++){var cs=[[1.5,1.5],[236.5,1.5],[1.5,332.5],[236.5,332.5]][Math.floor(WR()*4)],ln=2+WR()*3;wear+='<path d="M'+cs[0].toFixed(1)+' '+(cs[1]+(cs[1]>100?-1:1)*ln).toFixed(1)+'L'+(cs[0]+(cs[0]>100?-1:1)*ln*.7).toFixed(1)+' '+cs[1].toFixed(1)+'" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity=".95"/>'}}
+  for(var si=0;si<(gr<10?3:1);si++){var sx=20+WR()*190,sy=30+WR()*220;wear+='<path d="M'+sx.toFixed(1)+' '+sy.toFixed(1)+'l'+(8+WR()*14).toFixed(1)+' '+(-3-WR()*6).toFixed(1)+'" stroke="#fff" stroke-width=".35" opacity=".45"/>'}
   var tx=function(x,y,t,sz,w,anchor,extra){return '<text x="'+x+'" y="'+y+'"'+(anchor?' text-anchor="'+anchor+'"':'')+' font-family="Archivo,sans-serif" font-weight="'+(w||800)+'" font-size="'+sz+'" fill="#fff" stroke="#0B0A12" stroke-width="'+(sz>10?2.6:1.6)+'" paint-order="stroke" stroke-linejoin="round" '+(extra||'')+'>'+t+'</text>'};
   var s='<svg '+(opts.cls?'class="'+opts.cls+'" ':'')+'viewBox="0 0 240 336" role="img" aria-label="'+name+', full art '+type+' type card">'+
   '<defs><linearGradient id="'+id+'sv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4F5F7"/><stop offset=".25" stop-color="#A9ADB5"/><stop offset=".5" stop-color="#E9EBEE"/><stop offset=".75" stop-color="#8D929B"/><stop offset="1" stop-color="#DADDE2"/></linearGradient>'+
@@ -943,6 +975,9 @@ function cardSvg(name,opts){
   '<linearGradient id="'+id+'bt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#05040A" stop-opacity="0"/><stop offset=".35" stop-color="#05040A" stop-opacity=".55"/><stop offset="1" stop-color="#05040A" stop-opacity=".88"/></linearGradient>'+
   '<linearGradient id="'+id+'tp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#05040A" stop-opacity=".7"/><stop offset="1" stop-color="#05040A" stop-opacity="0"/></linearGradient>'+
   '<linearGradient id="'+id+'gb" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFE48A"/><stop offset=".5" stop-color="#E0A21A"/><stop offset="1" stop-color="#FFF1B8"/></linearGradient>'+
+  '<pattern id="'+id+'dm" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="none"/><rect x="2.4" y="2.4" width="2.2" height="2.2" fill="#fff" opacity=".28"/><path d="M0 0h7M0 0v7" stroke="#fff" stroke-opacity=".08" stroke-width=".5"/></pattern>'+
+  '<linearGradient id="'+id+'fo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff4d6d"/><stop offset=".18" stop-color="#ffd24d"/><stop offset=".36" stop-color="#5dffa0"/><stop offset=".54" stop-color="#4dd0ff"/><stop offset=".72" stop-color="#9a6bff"/><stop offset=".9" stop-color="#ff6bd6"/><stop offset="1" stop-color="#ff4d6d"/></linearGradient>'+
+  '<linearGradient id="'+id+'gl" x1="0" y1="0" x2="1" y2=".7"><stop offset="0" stop-color="#fff" stop-opacity=".0"/><stop offset=".28" stop-color="#fff" stop-opacity=".55"/><stop offset=".36" stop-color="#fff" stop-opacity="0"/><stop offset=".7" stop-color="#fff" stop-opacity="0"/><stop offset=".78" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>'+
   '<clipPath id="'+id+'cl"><rect x="9" y="9" width="222" height="318" rx="7"/></clipPath>'+
   '<filter id="'+id+'nz"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="'+(ghash(name)%97)+'"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .6 0"/></filter>'+
   '</defs>'+sc.defs+
@@ -950,6 +985,9 @@ function cardSvg(name,opts){
   '<g clip-path="url(#'+id+'cl)">'+sc.body+
     '<g transform="translate(122 252) rotate('+((R()-.5)*8).toFixed(1)+') scale('+(R()>.5?-1.55:1.55)+' 1.55)">'+beast(name,type,id,R)+'</g>'+fore(type,id,R)+
     '<rect x="9" y="9" width="222" height="318" filter="url(#'+id+'nz)" opacity=".07"/>'+
+    '<rect x="9" y="9" width="222" height="190" fill="url(#'+id+'dm)" opacity=".5"/>'+
+    '<rect x="9" y="9" width="222" height="318" fill="url(#'+id+'fo)" style="mix-blend-mode:overlay" opacity=".42"/>'+
+    '<rect x="9" y="9" width="222" height="318" fill="url(#'+id+'gl)" style="mix-blend-mode:soft-light"/>'+
     '<rect x="9" y="9" width="222" height="56" fill="url(#'+id+'tp)"/>'+
     '<rect x="9" y="196" width="222" height="131" fill="url(#'+id+'bt)"/>'+
   '</g>'+
@@ -975,6 +1013,11 @@ function cardSvg(name,opts){
   tx(120,318,'When this card is pulled from a protected pack, part of the shortfall comes back.',4.8,700,'middle')+
   tx(16,326.5,'Illus. Gacha Guard Studio',4.4,700)+tx(206,326.5,nn+'/120',5,800,'end')+
   '<path d="M213 321.5l1.3 2.6 2.9.4-2.1 2 .5 2.9-2.6-1.4-2.6 1.4.5-2.9-2.1-2 2.9-.4z" fill="#fff" stroke="#0B0A12" stroke-width=".6"/>'+
+  '<rect x="9.5" y="9.5" width="221" height="317" rx="6.6" fill="none" stroke="#000" stroke-opacity=".55" stroke-width="1.2"/>'+
+  '<rect x="10.8" y="10.8" width="218.4" height="314.4" rx="5.6" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width=".8"/>'+
+  '<rect x="1.4" y="1.4" width="237.2" height="333.2" rx="12.6" fill="none" stroke="#fff" stroke-opacity=".9" stroke-width="1.2"/>'+
+  '<rect x="3.6" y="3.6" width="232.8" height="328.8" rx="10.6" fill="none" stroke="#6B6F78" stroke-opacity=".45" stroke-width=".6"/>'+
+  wear+
   '</svg>';
   return s;
 }
@@ -1368,7 +1411,7 @@ function cardSvg(name,opts){
   var holo=$('holo'),slab=$('slab');
   function showSample(name,anim){
     var m=cardMeta(name),nn=(m.no<10?'00':m.no<100?'0':'')+m.no;
-    $('slName').textContent=name+' GG';$('slSet').textContent=m.set+' - '+nn+'/120';$('slCert').textContent=m.cert;$('slG').textContent=m.grade;$('slGl').innerHTML=m.gl.replace(' ','<br>');
+    $('slName').textContent=name+' GG';$('slSet').textContent=m.set+' - '+nn+'/120';$('slCert').textContent=m.cert;(function(){var r=grng(m.cert),x=0,o='';while(x<118){var w=1+Math.floor(r()*3);if(r()>.35)o+='<rect x="'+x+'" y="0" width="'+w*.8+'" height="14"/>';x+=w*1.2+.6}$('slBc').innerHTML=o})();$('slG').textContent=m.grade;$('slGl').innerHTML=m.gl.replace(' ','<br>');
     holo.innerHTML=cardSvg(name,{k:'s'});
     if(anim){slab.classList.remove('swap');void slab.offsetWidth;slab.classList.add('swap')}
   }
